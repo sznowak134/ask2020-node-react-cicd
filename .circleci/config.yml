@@ -37,10 +37,24 @@ jobs:
 workflows:
     build-and-test:
       jobs:
-        - build
+        - build:
+          filters:
+            branches:
+              only:
+                - master
         - test_1:
+            filters:
+              branches:
+                only:
+                  - master
             requires:
-              - build
+                - build
         - test_2:
+            filters:
+              branches:
+                only:
+                  - master
+            requires:
+                - build
             requires:
               - build
