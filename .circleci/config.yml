@@ -56,5 +56,3 @@ workflows:
                   - master
             requires:
                 - build
-            requires:
-              - build
